@@ -28,7 +28,7 @@
 
 /* Use Glibc's <errno.h> */
 #include <errno.h>
-#define LWIP_ERR_T  int
+#define LWIP_ERR_T  error_t
 
 /* System provides its own struct timeval */
 #define LWIP_TIMEVAL_PRIVATE  0
