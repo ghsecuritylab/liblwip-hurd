@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@/lwip
+
+Name: liblwip
+Description: LwIP shared library
+Version: @VERSION@
+Libs: -L${libdir} -llwip
+Cflags: -I${includedir}

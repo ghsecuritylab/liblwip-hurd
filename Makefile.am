@@ -18,6 +18,9 @@
 
 ACLOCAL_AMFLAGS = -I m4 --install
 
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = lwip.pc
+
 include $(srcdir)/Filelists.mk
 
 PORTDIR = $(srcdir)/port
