@@ -26,16 +26,18 @@ include $(srcdir)/Filelists.mk
 PORTDIR = $(srcdir)/port
 LWIPDIR = $(srcdir)/dist
 
-#ARCHFILES: architecture specific files.
-ARCHFILES = port/sys_arch.c
+#PORTFILES: port specific files.
+PORTFILES = port/sys_arch.c \
+	port/route_hook.c
 
-#ARCHFILES: architecture specific headers.
-ARCHHEADERS = port/include/arch/cc.h \
+#PORTHEADERS: port specific headers.
+PORTHEADERS = port/include/arch/cc.h \
 	port/include/arch/sys_arch.h \
-	port/include/lwipopts.h
+	port/include/lwipopts.h \
+	port/include/route_hook.h
 
-LWIPFILES = $(LWIPALLFILES) $(ARCHFILES)
-LWIPHEADERS = $(LWIPALLHEADERS) $(ARCHHEADERS)
+LWIPFILES = $(LWIPALLFILES) $(PORTFILES)
+LWIPHEADERS = $(LWIPALLHEADERS) $(PORTHEADERS)
 
 lib_LTLIBRARIES=liblwip.la
 
@@ -45,7 +47,8 @@ liblwip_la_includedir= \
 	$(includedir)/lwip
 
 liblwip_la_include_HEADERS = \
-	$(PORTDIR)/include/lwipopts.h
+	$(PORTDIR)/include/lwipopts.h \
+	$(PORTDIR)/include/route_hook.h
 
 liblwip_la_lwip_includedir= \
 	$(includedir)/lwip/lwip

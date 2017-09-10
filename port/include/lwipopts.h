@@ -53,6 +53,8 @@
 
 /* IPv4 stuff */
 #define IP_FORWARD  1
+#define LWIP_HOOK_IP4_ROUTE lwip_hook_ip4_route
+#define LWIP_HOOK_FILENAME <route_hook.h>
 
 /* SLAAC support and other IPv6 stuff */
 #define LWIP_IPV6_DUP_DETECT_ATTEMPTS 1
